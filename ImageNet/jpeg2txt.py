@@ -11,8 +11,8 @@ train = open("{}/train.txt".format(ROOT_PATH),"w")
 train_label =  open("{}/train_label.txt".format(ROOT_PATH),"w")
 label_list = open("{}/label_list.txt".format(ROOT_PATH),"w")
 
-#test  = open("{}/test.txt".format(ROOT_PATH),"w")
-#test_label =  open("{}/test_label.txt".format(ROOT_PATH),"w")
+test  = open("{}/test.txt".format(ROOT_PATH),"w")
+test_label =  open("{}/test_label.txt".format(ROOT_PATH),"w")
 
 #val   = open("{}/val.txt".format(ROOT_PATH),"w")
 #val_label =  open("{}/val_label.txt".format(ROOT_PATH),"w")
@@ -38,7 +38,7 @@ for root,dirs,files in os.walk(ROOT_PATH):
                 train.write(img_path+'\n')
             else:
                 print("No JPEG image")
-    """           
+          
     elif 'test' in root:
         m = pattern.search(root)
         if m != None:
@@ -50,7 +50,7 @@ for root,dirs,files in os.walk(ROOT_PATH):
                 test.write(img_path+'\n')
             else: 
                 print("No JPEG image")
-   
+    """  
     elif 'val' in root:
         m = pattern.search(root)
         if m != None:
@@ -64,7 +64,10 @@ for root,dirs,files in os.walk(ROOT_PATH):
                 print("No JPEG image")
 """
 train.close()
-#test.close()
+train_label.close()
+label_list.close()
+test.close()
+test_label.close()
 #val.close()
 
 
